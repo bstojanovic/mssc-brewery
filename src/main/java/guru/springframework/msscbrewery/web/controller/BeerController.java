@@ -49,5 +49,11 @@ public class BeerController {
         //Returns status code 204, telling client that request is performed but no content returned back to client.
 
     }
+    @DeleteMapping("/{beerId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteBeer(@PathVariable("beerId") UUID beerId){
+        beerService.deleteById(beerId);
+
+    }
 
 }
